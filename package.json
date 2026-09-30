@@ -56,7 +56,7 @@
     "@codemirror/lang-javascript": "^6.2.5",
     "@codemirror/state": "^6.7.1",
     "@codemirror/view": "^6.43.7",
-    "react-live": "^4.1.8"
+    "react-live": "^5.0.0"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^10.5.5",
