@@ -54,7 +54,8 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
-          cache: npm
+          # No dependency cache in a release job: a poisoned cache entry would be
+          # published with provenance (zizmor cache-poisoning).
 
       # A tag is a movable pointer. Without this, retagging `v0.3.3` at an
       # unrelated commit publishes that commit as 0.3.3, and nothing in the
@@ -91,7 +92,7 @@ jobs:
         run: npm pack --dry-run
 
       - name: Select provenance-capable npm
-        run: npm install --global npm@${PUBLISH_NPM_VERSION} --ignore-scripts --no-audit --no-fund
+        run: npm install --global "npm@${PUBLISH_NPM_VERSION}" --ignore-scripts --no-audit --no-fund
 
       - name: Publish to npm
         run: npm publish --provenance --access public
