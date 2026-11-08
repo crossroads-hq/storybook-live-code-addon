@@ -71,5 +71,10 @@
     "typescript": "latest",
     "vite": "latest",
     "vitest": "^5.0.3"
+  },
+  "overrides": {
+    "@joshwooding/vite-plugin-react-docgen-typescript@0.7.0": {
+      "glob": "14.0.2"
+    }
   }
 }
